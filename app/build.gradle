@@ -22,6 +22,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        profile {
+            initWith debug
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -35,8 +38,18 @@ android {
     }
 }
 
+String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?:
+        "https://storage.googleapis.com"
+repositories {
+    maven {
+        url '/Users/akilan/development/android-projects/android_module/build/host/outputs/repo'
+    }
+    maven {
+        url "$storageUrl/download.flutter.io"
+    }
+}
+
 dependencies {
-    implementation project(':flutter')
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
@@ -46,4 +59,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    debugImplementation 'com.example.android_module.android_module:flutter:1.0'
+    profileImplementation 'com.example.android_module.android_module:flutter:1.0'
+    releaseImplementation 'com.example.android_module.android_module:flutter:1.0'
 }
