@@ -33,6 +33,10 @@
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
             />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4310459535775382~3406103091" />
     </application>
 
 </manifest>
