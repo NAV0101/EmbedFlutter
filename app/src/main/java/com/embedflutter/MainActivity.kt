@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.embedflutter.custom_ad.CustomFlutterActivity
 import com.embedflutter.databinding.ActivityMainBinding
 import io.flutter.embedding.android.FlutterActivity
 
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            startActivity(Intent(this@MainActivity,FlutterActivity::class.java))
+            startActivity(Intent(this@MainActivity,CustomFlutterActivity::class.java))
         }
     }
 
